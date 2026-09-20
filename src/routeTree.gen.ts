@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChamadosRouteImport } from './routes/chamados'
+import { Route as ChecklistsRouteImport } from './routes/checklists'
+import { Route as ClientesRouteImport } from './routes/clientes'
+import { Route as ContratosRouteImport } from './routes/contratos'
+import { Route as EquipamentosRouteImport } from './routes/equipamentos'
+import { Route as MateriaisRouteImport } from './routes/materiais'
+import { Route as MonitoramentoRouteImport } from './routes/monitoramento'
+import { Route as OrcamentosRouteImport } from './routes/orcamentos'
+import { Route as PermissoesRouteImport } from './routes/permissoes'
+import { Route as RelatoriosRouteImport } from './routes/relatorios'
+import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as UsuariosRouteImport } from './routes/usuarios'
+import { Route as VisitasRouteImport } from './routes/visitas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChamadosRoute = ChamadosRouteImport.update({
+  id: '/chamados',
+  path: '/chamados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChecklistsRoute = ChecklistsRouteImport.update({
+  id: '/checklists',
+  path: '/checklists',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientesRoute = ClientesRouteImport.update({
+  id: '/clientes',
+  path: '/clientes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContratosRoute = ContratosRouteImport.update({
+  id: '/contratos',
+  path: '/contratos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipamentosRoute = EquipamentosRouteImport.update({
+  id: '/equipamentos',
+  path: '/equipamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MateriaisRoute = MateriaisRouteImport.update({
+  id: '/materiais',
+  path: '/materiais',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonitoramentoRoute = MonitoramentoRouteImport.update({
+  id: '/monitoramento',
+  path: '/monitoramento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrcamentosRoute = OrcamentosRouteImport.update({
+  id: '/orcamentos',
+  path: '/orcamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PermissoesRoute = PermissoesRouteImport.update({
+  id: '/permissoes',
+  path: '/permissoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RelatoriosRoute = RelatoriosRouteImport.update({
+  id: '/relatorios',
+  path: '/relatorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosRoute = ServicosRouteImport.update({
+  id: '/servicos',
+  path: '/servicos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UsuariosRoute = UsuariosRouteImport.update({
+  id: '/usuarios',
+  path: '/usuarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisitasRoute = VisitasRouteImport.update({
+  id: '/visitas',
+  path: '/visitas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chamados': typeof ChamadosRoute
+  '/checklists': typeof ChecklistsRoute
+  '/clientes': typeof ClientesRoute
+  '/contratos': typeof ContratosRoute
+  '/equipamentos': typeof EquipamentosRoute
+  '/materiais': typeof MateriaisRoute
+  '/monitoramento': typeof MonitoramentoRoute
+  '/orcamentos': typeof OrcamentosRoute
+  '/permissoes': typeof PermissoesRoute
+  '/relatorios': typeof RelatoriosRoute
+  '/servicos': typeof ServicosRoute
+  '/usuarios': typeof UsuariosRoute
+  '/visitas': typeof VisitasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chamados': typeof ChamadosRoute
+  '/checklists': typeof ChecklistsRoute
+  '/clientes': typeof ClientesRoute
+  '/contratos': typeof ContratosRoute
+  '/equipamentos': typeof EquipamentosRoute
+  '/materiais': typeof MateriaisRoute
+  '/monitoramento': typeof MonitoramentoRoute
+  '/orcamentos': typeof OrcamentosRoute
+  '/permissoes': typeof PermissoesRoute
+  '/relatorios': typeof RelatoriosRoute
+  '/servicos': typeof ServicosRoute
+  '/usuarios': typeof UsuariosRoute
+  '/visitas': typeof VisitasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chamados': typeof ChamadosRoute
+  '/checklists': typeof ChecklistsRoute
+  '/clientes': typeof ClientesRoute
+  '/contratos': typeof ContratosRoute
+  '/equipamentos': typeof EquipamentosRoute
+  '/materiais': typeof MateriaisRoute
+  '/monitoramento': typeof MonitoramentoRoute
+  '/orcamentos': typeof OrcamentosRoute
+  '/permissoes': typeof PermissoesRoute
+  '/relatorios': typeof RelatoriosRoute
+  '/servicos': typeof ServicosRoute
+  '/usuarios': typeof UsuariosRoute
+  '/visitas': typeof VisitasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/chamados'
+    | '/checklists'
+    | '/clientes'
+    | '/contratos'
+    | '/equipamentos'
+    | '/materiais'
+    | '/monitoramento'
+    | '/orcamentos'
+    | '/permissoes'
+    | '/relatorios'
+    | '/servicos'
+    | '/usuarios'
+    | '/visitas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/chamados'
+    | '/checklists'
+    | '/clientes'
+    | '/contratos'
+    | '/equipamentos'
+    | '/materiais'
+    | '/monitoramento'
+    | '/orcamentos'
+    | '/permissoes'
+    | '/relatorios'
+    | '/servicos'
+    | '/usuarios'
+    | '/visitas'
+  id:
+    | '__root__'
+    | '/'
+    | '/chamados'
+    | '/checklists'
+    | '/clientes'
+    | '/contratos'
+    | '/equipamentos'
+    | '/materiais'
+    | '/monitoramento'
+    | '/orcamentos'
+    | '/permissoes'
+    | '/relatorios'
+    | '/servicos'
+    | '/usuarios'
+    | '/visitas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChamadosRoute: typeof ChamadosRoute
+  ChecklistsRoute: typeof ChecklistsRoute
+  ClientesRoute: typeof ClientesRoute
+  ContratosRoute: typeof ContratosRoute
+  EquipamentosRoute: typeof EquipamentosRoute
+  MateriaisRoute: typeof MateriaisRoute
+  MonitoramentoRoute: typeof MonitoramentoRoute
+  OrcamentosRoute: typeof OrcamentosRoute
+  PermissoesRoute: typeof PermissoesRoute
+  RelatoriosRoute: typeof RelatoriosRoute
+  ServicosRoute: typeof ServicosRoute
+  UsuariosRoute: typeof UsuariosRoute
+  VisitasRoute: typeof VisitasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chamados': {
+      id: '/chamados'
+      path: '/chamados'
+      fullPath: '/chamados'
+      preLoaderRoute: typeof ChamadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checklists': {
+      id: '/checklists'
+      path: '/checklists'
+      fullPath: '/checklists'
+      preLoaderRoute: typeof ChecklistsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clientes': {
+      id: '/clientes'
+      path: '/clientes'
+      fullPath: '/clientes'
+      preLoaderRoute: typeof ClientesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contratos': {
+      id: '/contratos'
+      path: '/contratos'
+      fullPath: '/contratos'
+      preLoaderRoute: typeof ContratosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipamentos': {
+      id: '/equipamentos'
+      path: '/equipamentos'
+      fullPath: '/equipamentos'
+      preLoaderRoute: typeof EquipamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/materiais': {
+      id: '/materiais'
+      path: '/materiais'
+      fullPath: '/materiais'
+      preLoaderRoute: typeof MateriaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monitoramento': {
+      id: '/monitoramento'
+      path: '/monitoramento'
+      fullPath: '/monitoramento'
+      preLoaderRoute: typeof MonitoramentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orcamentos': {
+      id: '/orcamentos'
+      path: '/orcamentos'
+      fullPath: '/orcamentos'
+      preLoaderRoute: typeof OrcamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/permissoes': {
+      id: '/permissoes'
+      path: '/permissoes'
+      fullPath: '/permissoes'
+      preLoaderRoute: typeof PermissoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/relatorios': {
+      id: '/relatorios'
+      path: '/relatorios'
+      fullPath: '/relatorios'
+      preLoaderRoute: typeof RelatoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos': {
+      id: '/servicos'
+      path: '/servicos'
+      fullPath: '/servicos'
+      preLoaderRoute: typeof ServicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/usuarios': {
+      id: '/usuarios'
+      path: '/usuarios'
+      fullPath: '/usuarios'
+      preLoaderRoute: typeof UsuariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visitas': {
+      id: '/visitas'
+      path: '/visitas'
+      fullPath: '/visitas'
+      preLoaderRoute: typeof VisitasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChamadosRoute: ChamadosRoute,
+  ChecklistsRoute: ChecklistsRoute,
+  ClientesRoute: ClientesRoute,
+  ContratosRoute: ContratosRoute,
+  EquipamentosRoute: EquipamentosRoute,
+  MateriaisRoute: MateriaisRoute,
+  MonitoramentoRoute: MonitoramentoRoute,
+  OrcamentosRoute: OrcamentosRoute,
+  PermissoesRoute: PermissoesRoute,
+  RelatoriosRoute: RelatoriosRoute,
+  ServicosRoute: ServicosRoute,
+  UsuariosRoute: UsuariosRoute,
+  VisitasRoute: VisitasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

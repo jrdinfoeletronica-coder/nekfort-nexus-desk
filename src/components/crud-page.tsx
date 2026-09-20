@@ -218,7 +218,7 @@ export function CrudPage({ entity }: { entity: Entity }) {
                 <Label htmlFor={f.name}>{f.label}</Label>
                 {f.type === "select" ? (
                   <Select
-                    value={values[f.name] || undefined}
+                    value={values[f.name] ?? ""}
                     onValueChange={(v) => setValues((p) => ({ ...p, [f.name]: v }))}
                   >
                     <SelectTrigger id={f.name}>
@@ -234,7 +234,7 @@ export function CrudPage({ entity }: { entity: Entity }) {
                   </Select>
                 ) : f.type === "ref" ? (
                   <Select
-                    value={values[f.name] || undefined}
+                    value={values[f.name] ?? ""}
                     onValueChange={(v) => setValues((p) => ({ ...p, [f.name]: v }))}
                   >
                     <SelectTrigger id={f.name}>
