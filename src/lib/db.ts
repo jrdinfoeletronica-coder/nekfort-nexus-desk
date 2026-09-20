@@ -360,6 +360,8 @@ export function seedData(): DB {
   };
 }
 
+const SERVER_SNAPSHOT: DB = seedData();
+
 let state: DB = seedData();
 let hydrated = false;
 const listeners = new Set<() => void>();
@@ -403,7 +405,7 @@ export function useTable(name: string): Row[] {
   return useSyncExternalStore(
     subscribe,
     () => state[name] ?? [],
-    () => seedData()[name] ?? [],
+    () => SERVER_SNAPSHOT[name] ?? [],
   );
 }
 
@@ -411,7 +413,7 @@ export function useDatabase(): DB {
   return useSyncExternalStore(
     subscribe,
     () => state,
-    () => seedData(),
+    () => SERVER_SNAPSHOT,
   );
 }
 
