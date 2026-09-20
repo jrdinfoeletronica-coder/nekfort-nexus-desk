@@ -1,9 +1,15 @@
 import { AppShell } from "@/components/app-shell";
 import { CrudPage } from "@/components/crud-page";
-import { entities } from "@/lib/schema";
+import { entities, type Entity } from "@/lib/schema";
 
-export function EntityRoute({ name }: { name: keyof typeof entities }) {
+function getEntity(name: string): Entity {
   const entity = entities[name];
+  if (!entity) throw new Error(`Entidade desconhecida: ${name}`);
+  return entity;
+}
+
+export function EntityRoute({ name }: { name: string }) {
+  const entity = getEntity(name);
   return (
     <AppShell title={entity.title} description={entity.description}>
       <CrudPage entity={entity} />
@@ -11,8 +17,8 @@ export function EntityRoute({ name }: { name: keyof typeof entities }) {
   );
 }
 
-export function entityHead(name: keyof typeof entities) {
-  const entity = entities[name];
+export function entityHead(name: string) {
+  const entity = getEntity(name);
   const title = `${entity.title} — NEKFORT Service Desk`;
   return () => ({
     meta: [
