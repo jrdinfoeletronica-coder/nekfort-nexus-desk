@@ -36,12 +36,12 @@ export const Route = createFileRoute("/")({
 
 function Painel() {
   const db = useDatabase();
-  const chamados = db.chamados ?? [];
-  const contratos = db.contratos ?? [];
-  const visitas = db.visitas ?? [];
-  const materiais = db.materiais ?? [];
-  const monitoramento = db.monitoramento ?? [];
-  const clientes = db.clientes ?? [];
+  const chamados = db['chamados'] ?? [];
+  const contratos = db['contratos'] ?? [];
+  const visitas = db['visitas'] ?? [];
+  const materiais = db['materiais'] ?? [];
+  const monitoramento = db['monitoramento'] ?? [];
+  const clientes = db['clientes'] ?? [];
 
   const abertos = chamados.filter((c) => c["status"] !== "Resolvido" && c["status"] !== "Cancelado");
   const criticos = abertos.filter((c) => c["prioridade"] === "Crítica" || c["prioridade"] === "Alta");

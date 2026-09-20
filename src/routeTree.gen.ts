@@ -19,6 +19,7 @@ import { Route as MateriaisRouteImport } from './routes/materiais'
 import { Route as MonitoramentoRouteImport } from './routes/monitoramento'
 import { Route as OrcamentosRouteImport } from './routes/orcamentos'
 import { Route as PermissoesRouteImport } from './routes/permissoes'
+import { Route as RelatoriosRouteImport } from './routes/relatorios'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as UsuariosRouteImport } from './routes/usuarios'
 import { Route as VisitasRouteImport } from './routes/visitas'
@@ -73,6 +74,11 @@ const PermissoesRoute = PermissoesRouteImport.update({
   path: '/permissoes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RelatoriosRoute = RelatoriosRouteImport.update({
+  id: '/relatorios',
+  path: '/relatorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicosRoute = ServicosRouteImport.update({
   id: '/servicos',
   path: '/servicos',
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/monitoramento': typeof MonitoramentoRoute
   '/orcamentos': typeof OrcamentosRoute
   '/permissoes': typeof PermissoesRoute
+  '/relatorios': typeof RelatoriosRoute
   '/servicos': typeof ServicosRoute
   '/usuarios': typeof UsuariosRoute
   '/visitas': typeof VisitasRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/monitoramento': typeof MonitoramentoRoute
   '/orcamentos': typeof OrcamentosRoute
   '/permissoes': typeof PermissoesRoute
+  '/relatorios': typeof RelatoriosRoute
   '/servicos': typeof ServicosRoute
   '/usuarios': typeof UsuariosRoute
   '/visitas': typeof VisitasRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/monitoramento': typeof MonitoramentoRoute
   '/orcamentos': typeof OrcamentosRoute
   '/permissoes': typeof PermissoesRoute
+  '/relatorios': typeof RelatoriosRoute
   '/servicos': typeof ServicosRoute
   '/usuarios': typeof UsuariosRoute
   '/visitas': typeof VisitasRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/monitoramento'
     | '/orcamentos'
     | '/permissoes'
+    | '/relatorios'
     | '/servicos'
     | '/usuarios'
     | '/visitas'
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/monitoramento'
     | '/orcamentos'
     | '/permissoes'
+    | '/relatorios'
     | '/servicos'
     | '/usuarios'
     | '/visitas'
@@ -178,6 +189,7 @@ export interface FileRouteTypes {
     | '/monitoramento'
     | '/orcamentos'
     | '/permissoes'
+    | '/relatorios'
     | '/servicos'
     | '/usuarios'
     | '/visitas'
@@ -194,6 +206,7 @@ export interface RootRouteChildren {
   MonitoramentoRoute: typeof MonitoramentoRoute
   OrcamentosRoute: typeof OrcamentosRoute
   PermissoesRoute: typeof PermissoesRoute
+  RelatoriosRoute: typeof RelatoriosRoute
   ServicosRoute: typeof ServicosRoute
   UsuariosRoute: typeof UsuariosRoute
   VisitasRoute: typeof VisitasRoute
@@ -271,6 +284,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PermissoesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/relatorios': {
+      id: '/relatorios'
+      path: '/relatorios'
+      fullPath: '/relatorios'
+      preLoaderRoute: typeof RelatoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicos': {
       id: '/servicos'
       path: '/servicos'
@@ -306,6 +326,7 @@ const rootRouteChildren: RootRouteChildren = {
   MonitoramentoRoute: MonitoramentoRoute,
   OrcamentosRoute: OrcamentosRoute,
   PermissoesRoute: PermissoesRoute,
+  RelatoriosRoute: RelatoriosRoute,
   ServicosRoute: ServicosRoute,
   UsuariosRoute: UsuariosRoute,
   VisitasRoute: VisitasRoute,

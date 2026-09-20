@@ -72,11 +72,11 @@ function DistTable({ title, data, total }: { title: string; data: [string, numbe
 
 function Relatorios() {
   const db = useDatabase();
-  const chamados = db.chamados ?? [];
-  const visitas = db.visitas ?? [];
-  const orcamentos = db.orcamentos ?? [];
-  const contratos = db.contratos ?? [];
-  const clientes = db.clientes ?? [];
+  const chamados = db['chamados'] ?? [];
+  const visitas = db['visitas'] ?? [];
+  const orcamentos = db['orcamentos'] ?? [];
+  const contratos = db['contratos'] ?? [];
+  const clientes = db['clientes'] ?? [];
 
   const aprovado = orcamentos
     .filter((o) => o["status"] === "Aprovado")
